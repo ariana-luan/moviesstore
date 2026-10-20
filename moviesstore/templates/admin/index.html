@@ -1,0 +1,13 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+
+{% block sidebar %}
+<div class="module" id="leaderboard-module">
+    <table>
+        <caption>
+            <a href="{% url 'admin:leaderboard' %}" class="section">{% translate 'Top Purchasers' %}</a>
+        </caption>
+    </table>
+</div>
+{{ block.super }}
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Top Commenters</h1>
+
+{% if leaders %}
+<p>
+    <strong>Most Comments:</strong> 
+    {% for leader in leaders %}
+        {{ leader.user__username }}{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+    - {{ leaders.0.comment_count }} comments posted
+</p>
+
+<table>
+    <thead>
+        <tr><th>Rank</th><th>Users</th><th>Comments Posted</th></tr>
+    </thead>
+    <tbody>
+    {% for row in stats %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ row.user__username }}</td>
+        <td>{{ row.comment_count }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No comments have been posted yet.</p>
+{% endif %}
+{% endblock %}

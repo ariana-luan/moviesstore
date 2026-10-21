@@ -9,5 +9,13 @@
         </caption>
     </table>
 </div>
+
+<div class="module" id="comment-leaderboard-module">
+    <table>
+        <caption>
+            <a href="{% url 'admin:comment_leaderboard' %}" class="section">{% translate 'Top Commenters' %}
+        </caption>
+    </table>
+</div>
 {{ block.super }}
 {% endblock %}

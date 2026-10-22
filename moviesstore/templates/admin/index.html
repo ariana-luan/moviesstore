@@ -26,5 +26,14 @@
         </caption>
     </table>
 </div>
+<div class="module" id="top-movies-module">
+    <table>
+        <caption>
+            <a href="{% url 'admin:top_movies' %}" class="section">
+                {% translate 'Top Movies' %}
+            </a>
+        </caption>
+    </table>
+</div>
 {{ block.super }}
 {% endblock %}

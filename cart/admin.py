@@ -37,7 +37,7 @@ def top_movies(request):
 def get_admin_urls(urls):
     def get_urls():
         my_urls = [
-            path('top_movies/', admin.site.admin_view(top_movies), name="top-movies")
+            path('top_movies/', admin.site.admin_view(top_movies), name="top_movies")
         ]
         return my_urls + urls
     return get_urls

@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Top Movies</h2>
+<h2>Most Purchased:</h2>
+<p>{{ template_data.p_movie }}</p>
+
+<h2>Most Reviewed:</h2>
+<p>{{ template_data.r_movie }}</p>
+{% endblock %}

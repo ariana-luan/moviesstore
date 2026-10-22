@@ -17,5 +17,14 @@
         </caption>
     </table>
 </div>
+<div class="module" id="purchase-ranking-module">
+    <table>
+        <caption>
+            <a href="{% url 'admin:purchase_ranking' %}" class="section">
+                {% translate 'User Purchase Rankings' %}
+            </a>
+        </caption>
+    </table>
+</div>
 {{ block.super }}
 {% endblock %}

@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>User Purchase Rankings</h1>
+
+<form method="get">
+    <label for="limit">List size</label>
+    <input type="number" name="limit" id="limit" min="1" value="{{ limit }}">
+    <button type="submit">Show</button>
+    <a href="{% url 'admin:purchase_ranking' %}">Show all</a>
+</form>
+
+{% if limit_error %}
+<p>{{ limit_error }}</p>
+{% endif %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Username</th>
+            <th>Movies Purchased</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for user in stats %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.purchase_count }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="3">No users found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
